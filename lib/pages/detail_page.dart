@@ -12,16 +12,11 @@ class DetailPage extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         child: SafeArea(
-          child: Container(
-            margin: const EdgeInsets.only(
-              left: 24,
-              right: 24,
-              top: 14,
-              bottom: 24,
-            ),
-            child: Column(
-              children: [
-                Row(
+          child: Column(
+            children: [
+              Container(
+                margin: const EdgeInsets.only(left: 4, right: 4, top: 14),
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     MyIconButton(onPressed: () {}, icon: Icons.arrow_back),
@@ -29,64 +24,73 @@ class DetailPage extends StatelessWidget {
                     MyIconButton(onPressed: () {}, icon: Icons.bookmark_border),
                   ],
                 ),
-                MySpacing(height: 24),
-                Container(color: Colors.amber, width: 1000, height: 200),
-                MySpacing(height: 24),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
+              ),
+              Container(
+                margin: const EdgeInsets.only(left: 14, right: 14, bottom: 24),
+                child: Column(
                   children: [
-                    MyTextBold(text: 'What\'s Included?', fontSize: 20),
-                  ],
-                ),
-                MySpacing(height: 12),
-                Container(color: Colors.amber, width: 1000, height: 80),
-                MySpacing(height: 24),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [MyTextBold(text: 'About Trip', fontSize: 20)],
-                ),
-                MySpacing(height: 12),
-                MyTextNormal(
-                  text:
-                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In euismod ipsum et dui rhoncus auctor.',
-                  textAlign: TextAlign.start,
-                ),
-                MySpacing(height: 24),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [MyTextBold(text: 'Gallery Photo', fontSize: 20)],
-                ),
-                MySpacing(height: 12),
-                Container(color: Colors.amber, width: 1000, height: 100),
-                MySpacing(height: 24),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [MyTextBold(text: 'Location', fontSize: 20)],
-                ),
-                MySpacing(height: 12),
-                Container(color: Colors.amber, width: 1000, height: 240),
-                MySpacing(height: 24),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    MyTextBold(text: 'Reviews', fontSize: 20),
+                    MySpacing(height: 24),
+                    Container(color: Colors.amber, width: 1000, height: 200),
+                    MySpacing(height: 24),
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        Icon(Icons.star, color: Colors.amber),
-                        MySpacing(width: 4),
-                        MyTextNormal(
-                          text: '4.8',
-                          fontSize: 16,
-                          fontWeight: FontWeight.w500,
+                        MyTextBold(text: 'What\'s Included?', fontSize: 20),
+                      ],
+                    ),
+                    MySpacing(height: 12),
+                    Container(color: Colors.amber, width: 1000, height: 80),
+                    MySpacing(height: 24),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [MyTextBold(text: 'About Trip', fontSize: 20)],
+                    ),
+                    MySpacing(height: 12),
+                    MyTextNormal(
+                      text:
+                          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In euismod ipsum et dui rhoncus auctor.',
+                      textAlign: TextAlign.start,
+                    ),
+                    MySpacing(height: 24),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        MyTextBold(text: 'Gallery Photo', fontSize: 20),
+                      ],
+                    ),
+                    MySpacing(height: 12),
+                    Container(color: Colors.amber, width: 1000, height: 100),
+                    MySpacing(height: 24),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [MyTextBold(text: 'Location', fontSize: 20)],
+                    ),
+                    MySpacing(height: 12),
+                    Container(color: Colors.amber, width: 1000, height: 240),
+                    MySpacing(height: 24),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        MyTextBold(text: 'Reviews', fontSize: 20),
+                        Row(
+                          children: [
+                            Icon(Icons.star, color: Colors.amber),
+                            MySpacing(width: 4),
+                            MyTextNormal(
+                              text: '4.8',
+                              fontSize: 16,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ],
                         ),
                       ],
                     ),
+                    MySpacing(height: 12),
+                    Container(color: Colors.amber, width: 1000, height: 120),
                   ],
                 ),
-                MySpacing(height: 12),
-                Container(color: Colors.amber, width: 1000, height: 120),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),

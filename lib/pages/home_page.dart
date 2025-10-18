@@ -16,8 +16,8 @@ class HomePage extends StatelessWidget {
         child: SafeArea(
           child: Container(
             margin: const EdgeInsets.only(
-              left: 24,
-              right: 24,
+              left: 14,
+              right: 14,
               top: 14,
               bottom: 24,
             ),
