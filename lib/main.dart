@@ -20,7 +20,7 @@ class MainApp extends StatelessWidget {
         primaryColor: MainColor.primary,
         scaffoldBackgroundColor: SupportColor.white,
       ),
-      initialRoute: AppRoutes.detailPage,
+      initialRoute: AppRoutes.loginPage,
       home: HomePage(),
       routes: AppPages.pages,
     );
