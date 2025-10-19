@@ -16,11 +16,11 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        fontFamily: 'inter',
+        fontFamily: 'Inter',
         primaryColor: MainColor.primary,
         scaffoldBackgroundColor: SupportColor.white,
       ),
-      initialRoute: AppRoutes.loginPage,
+      initialRoute: AppRoutes.splashscreenPage,
       home: HomePage(),
       routes: AppPages.pages,
     );
