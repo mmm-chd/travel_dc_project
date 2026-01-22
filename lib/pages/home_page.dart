@@ -1,9 +1,9 @@
-import 'package:dicoding_project/components/widgets/icon_button_widget/myicon_button.dart';
+import 'package:dicoding_project/components/custom_spacing.dart';
+import 'package:dicoding_project/components/widgets/custom_chipsImage.dart';
+import 'package:dicoding_project/components/widgets/custom_iconButtonCircle.dart';
+import 'package:dicoding_project/components/widgets/custom_text.dart';
+import 'package:dicoding_project/components/widgets/custom_textField.dart';
 
-import '../components/widgets/spacing_widget/myspacing.dart';
-import '../components/widgets/text_widget/mytext_bold.dart';
-import '../components/widgets/text_widget/mytext_normal.dart';
-import '../components/widgets/text_field_widget/mytf.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -15,12 +15,7 @@ class HomePage extends StatelessWidget {
       body: SingleChildScrollView(
         child: SafeArea(
           child: Container(
-            margin: const EdgeInsets.only(
-              left: 14,
-              right: 14,
-              top: 14,
-              bottom: 24,
-            ),
+            margin: const EdgeInsets.symmetric(horizontal: 14, vertical: 14),
             child: Column(
               children: [
                 Row(
@@ -34,72 +29,94 @@ class HomePage extends StatelessWidget {
                             'assets/images/avatar.png',
                           ),
                         ),
-                        MySpacing(width: 8),
-                        MyTextNormal(
+                        CustomSpacing(width: 8),
+                        CustomText(
                           text: 'Hi, User!',
-                          fontSize: 14,
-                          fontWeight: FontWeight.w500,
+                          style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w500,
+                          ),
                         ),
                       ],
                     ),
-                    MyIconButton(onPressed: () {}, icon: Icons.notifications),
+                    CustomIconbuttonCircle(
+                      onPressed: () {},
+                      icon: Icons.notifications,
+                    ),
                   ],
                 ),
-                MySpacing(height: 24),
-                MyTextBold(
+                CustomSpacing(height: 24),
+                CustomText(
                   text: 'Where do you want to explore today?',
-                  fontSize: 30,
+                  style: TextStyle(fontSize: 30),
                 ),
-                MySpacing(height: 24),
-                MyTextField(
-                  hintText: 'Search',
-                  icon: Icons.search,
-                  suffixIcon: true,
+                CustomSpacing(height: 24),
+                CustomTextfield(
+                  hint: 'Search',
+                  suffixIcon: Icon(Icons.search),
+                  useSuffixIcon: true,
+                  isNumber: false,
+                  controller: TextEditingController(),
                 ),
-                MySpacing(height: 24),
+                CustomSpacing(height: 24),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    MyTextBold(text: 'Choose Category', fontSize: 18),
-                    MyTextNormal(
+                    CustomText(
+                      text: 'Choose Category',
+                      style: TextStyle(fontSize: 18),
+                    ),
+                    CustomText(
                       text: 'See All',
-                      fontSize: 14,
-                      fontWeight: FontWeight.w400,
-                      color: Colors.grey,
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                        color: Colors.grey,
+                      ),
                     ),
                   ],
                 ),
-                MySpacing(height: 12),
-                Container(color: Colors.amber, width: 1000, height: 60),
-                MySpacing(height: 24),
+                CustomSpacing(height: 12),
+                CustomChipsimage(selected: true, label: 'label', onTap: () {}),
+                CustomSpacing(height: 24),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    MyTextBold(text: 'Favorite Destination', fontSize: 18),
-                    MyTextNormal(
+                    CustomText(
+                      text: 'Favorite Destination',
+                      style: TextStyle(fontSize: 18),
+                    ),
+                    CustomText(
                       text: 'See All',
-                      fontSize: 14,
-                      fontWeight: FontWeight.w400,
-                      color: Colors.grey,
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                        color: Colors.grey,
+                      ),
                     ),
                   ],
                 ),
-                MySpacing(height: 12),
+                CustomSpacing(height: 12),
                 Container(color: Colors.blue, width: 1000, height: 220),
-                MySpacing(height: 24),
+                CustomSpacing(height: 24),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    MyTextBold(text: 'Popular Package', fontSize: 18),
-                    MyTextNormal(
+                    CustomText(
+                      text: 'Popular Package',
+                      style: TextStyle(fontSize: 18),
+                    ),
+                    CustomText(
                       text: 'See All',
-                      fontSize: 14,
-                      fontWeight: FontWeight.w400,
-                      color: Colors.grey,
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                        color: Colors.grey,
+                      ),
                     ),
                   ],
                 ),
-                MySpacing(height: 12),
+                CustomSpacing(height: 12),
                 Container(color: Colors.blue, width: 1000, height: 160),
               ],
             ),
