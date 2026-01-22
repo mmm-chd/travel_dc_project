@@ -1,5 +1,4 @@
-import 'package:dicoding_project/components/colors/mycolor.dart';
-import 'package:dicoding_project/pages/home_page.dart';
+import 'package:dicoding_project/configs/themes_color.dart';
 import 'package:dicoding_project/routes/app_pages.dart';
 import 'package:dicoding_project/routes/app_routes.dart';
 import 'package:flutter/material.dart';
@@ -17,11 +16,24 @@ class MainApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         fontFamily: 'Inter',
-        primaryColor: MainColor.primary,
-        scaffoldBackgroundColor: SupportColor.white,
+        primaryColor: PColor.primary,
+        scaffoldBackgroundColor: HColor.bgWhite,
+        colorScheme: ColorScheme.light(
+          surface: Colors.white,
+          background: Colors.white,
+          primary: PColor.primary,
+        ),
+        appBarTheme: AppBarTheme(
+          backgroundColor: HColor.bgWhite,
+          elevation: 0,
+          surfaceTintColor: HColor.bgWhite,
+        ),
+        cardTheme: CardThemeData(
+          color: Colors.white,
+          surfaceTintColor: Colors.white,
+        ),
       ),
-      initialRoute: AppRoutes.splashscreenPage,
-      home: HomePage(),
+      initialRoute: AppRoutes.homePage,
       routes: AppPages.pages,
     );
   }
