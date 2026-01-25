@@ -119,6 +119,7 @@ class _LogPageState extends State<LogPage> {
                           duration: Duration(milliseconds: 800),
                         ),
                       );
+                      return;
                     }
                     if (emailController.text == "user@gmail.com" &&
                         passwordController.text == "12345678") {
