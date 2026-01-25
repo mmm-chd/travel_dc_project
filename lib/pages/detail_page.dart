@@ -1,6 +1,6 @@
-import 'package:dicoding_project/components/widgets/custom_iconButtonCircle.dart';
+import 'package:dicoding_project/components/custom_iconButtonCircle.dart';
 import 'package:dicoding_project/components/custom_spacing.dart';
-import 'package:dicoding_project/components/widgets/custom_text.dart';
+import 'package:dicoding_project/components/custom_text.dart';
 import 'package:flutter/material.dart';
 
 class DetailPage extends StatelessWidget {

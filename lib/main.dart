@@ -33,7 +33,7 @@ class MainApp extends StatelessWidget {
           surfaceTintColor: Colors.white,
         ),
       ),
-      initialRoute: AppRoutes.homePage,
+      initialRoute: AppRoutes.splashPage,
       routes: AppPages.pages,
     );
   }

@@ -1,4 +1,4 @@
-import 'package:dicoding_project/components/widgets/custom_text.dart';
+import 'package:dicoding_project/components/custom_text.dart';
 import 'package:dicoding_project/configs/themes_color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -59,10 +59,7 @@ class CustomChipsimage extends StatelessWidget {
                 color: selected ? Colors.white : Colors.transparent,
                 borderRadius: BorderRadius.circular(8),
               ),
-              child: SvgPicture.asset(
-                'assets/icons/mountain_sp.svg',
-                width: 36,
-              ),
+              child: SvgPicture.asset('assets/icons/mountain.svg', width: 36),
             ),
             AnimatedDefaultTextStyle(
               duration: const Duration(milliseconds: 200),

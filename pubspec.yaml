@@ -23,5 +23,5 @@ flutter:
   assets:
     - assets/animations/
     - assets/images/
-    - assets/icons/mountain_sp.svg
+    - assets/icons/
     - assets/icons/social_icons/

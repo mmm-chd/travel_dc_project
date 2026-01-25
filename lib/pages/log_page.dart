@@ -1,15 +1,29 @@
+import 'package:dicoding_project/components/custom_button.dart';
+import 'package:dicoding_project/components/custom_checkBox.dart';
+import 'package:dicoding_project/components/custom_iconButtonCircle.dart';
+import 'package:dicoding_project/components/custom_socialButton.dart';
 import 'package:dicoding_project/components/custom_spacing.dart';
-import 'package:dicoding_project/components/widgets/custom_button.dart';
-import 'package:dicoding_project/components/widgets/custom_checkBox.dart';
-import 'package:dicoding_project/components/widgets/custom_iconButtonCircle.dart';
-import 'package:dicoding_project/components/widgets/custom_socialButton.dart';
-import 'package:dicoding_project/components/widgets/custom_text.dart';
-import 'package:dicoding_project/components/widgets/custom_textField.dart';
+import 'package:dicoding_project/components/custom_text.dart';
+import 'package:dicoding_project/components/custom_textField.dart';
 import 'package:dicoding_project/configs/themes_color.dart';
+import 'package:dicoding_project/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+class LogPage extends StatefulWidget {
+  const LogPage({super.key});
+
+  @override
+  State<LogPage> createState() => _LogPageState();
+}
+
+class _LogPageState extends State<LogPage> {
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+  bool checked = false;
+
+  bool checkBoxState() {
+    return checked = !checked;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +61,7 @@ class LoginPage extends StatelessWidget {
               hint: '...@gmail.com',
               useFlLabel: true,
               isNumber: false,
-              controller: TextEditingController(),
+              controller: emailController,
             ),
             const CustomSpacing(height: 32),
             Column(
@@ -62,7 +76,7 @@ class LoginPage extends StatelessWidget {
                     Icons.visibility_off_rounded,
                     color: Colors.grey,
                   ),
-                  controller: TextEditingController(),
+                  controller: passwordController,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -70,8 +84,12 @@ class LoginPage extends StatelessWidget {
                     Row(
                       children: [
                         CustomCheckbox(
-                          value: false,
-                          onChanged: (value) {},
+                          value: checked,
+                          onChanged: (value) {
+                            setState(() {
+                              checkBoxState();
+                            });
+                          },
                           borderColor: Colors.grey,
                         ),
                         CustomText(
@@ -92,7 +110,30 @@ class LoginPage extends StatelessWidget {
             Column(
               children: [
                 CustomButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    if (emailController.text.isEmpty ||
+                        passwordController.text.isEmpty) {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content: CustomText(text: "Please fill in the field"),
+                          duration: Duration(milliseconds: 800),
+                        ),
+                      );
+                    }
+                    if (emailController.text == "user@gmail.com" &&
+                        passwordController.text == "12345678") {
+                      Navigator.pushNamed(context, AppRoutes.homePage);
+                    } else {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content: CustomText(
+                            text: "Please check your fill in",
+                          ),
+                          duration: Duration(milliseconds: 800),
+                        ),
+                      );
+                    }
+                  },
                   text: 'Sign In',
                   backgroundColor: PColor.primary,
                   foregroundColor: SColor.white,

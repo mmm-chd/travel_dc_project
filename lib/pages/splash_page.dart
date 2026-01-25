@@ -1,6 +1,6 @@
 import 'package:dicoding_project/components/custom_spacing.dart';
-import 'package:dicoding_project/components/widgets/custom_button.dart';
-import 'package:dicoding_project/components/widgets/custom_text.dart';
+import 'package:dicoding_project/components/custom_button.dart';
+import 'package:dicoding_project/components/custom_text.dart';
 import 'package:dicoding_project/configs/themes_color.dart';
 import 'package:dicoding_project/routes/app_routes.dart';
 import 'package:flutter/material.dart';
