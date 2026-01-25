@@ -20,9 +20,14 @@ class _LogPageState extends State<LogPage> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   bool checked = false;
+  bool obscureText = true;
 
   bool checkBoxState() {
     return checked = !checked;
+  }
+
+  bool isObscure() {
+    return obscureText = !obscureText;
   }
 
   @override
@@ -70,12 +75,17 @@ class _LogPageState extends State<LogPage> {
                   label: 'Password',
                   useFlLabel: true,
                   isNumber: false,
-                  obscureText: true,
+                  obscureText: obscureText,
                   useSuffixIcon: true,
                   suffixIcon: Icon(
-                    Icons.visibility_off_rounded,
+                    obscureText
+                        ? Icons.visibility_off_rounded
+                        : Icons.visibility,
                     color: Colors.grey,
                   ),
+                  onTapSuffixIcon: () {
+                    setState(() => isObscure());
+                  },
                   controller: passwordController,
                 ),
                 Row(
